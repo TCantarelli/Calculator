@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 int main(){
-        float a,b,c, DELTA, X1,X2,XV,YV;
-        int segundos, anos, meses, minutos, horas, dias, A , B, x, y;
+        float a,b,c, DELTA, X1,X2,XV,YV, media;
+        int segundos, anos, meses, minutos, horas, dias, restoA , restoB, x, y, nr1, nr2, nr3, nr4, nr5;
     printf("escolha qual operação deve ser feita?\n");
     printf("1-soma\n");
     printf("2-subtração\n");
@@ -13,6 +13,7 @@ int main(){
     printf("7-Raiz Quadrada\n");
     printf("8-Potenciação\n");
     printf("9-transformacao de segundos\n");
+    printf("10-Media\n");
     scanf("%d", &x);
     if (x == 1){
         printf("Escolha o primeiro numero a ser somado:");
@@ -117,18 +118,18 @@ int main(){
         printf("Digite quantos segundos\n");
         scanf("%d", &segundos);
         anos = segundos / 31536000;
-        A = segundos % 31536000;
-        meses = A / 2592000;
-        B = A % 2592000;
-        dias = B / 86400;
+        restoA = segundos % 31536000;
+        meses = restoA / 2592000;
+        restoB = restoA % 2592000;
+        dias = restoB / 86400;
         printf("transormando %d segundos em anos, meses e dias fica %d anos, %d meses, %d dias", segundos, anos, meses, dias);
     }
     else if (y == 2){
         printf("Digite quantos segundos\n");
         scanf("%d", &segundos);
         meses = segundos / 2592000;
-        A = segundos % 2592000;
-        dias = A / 86400;
+        restoA = segundos % 2592000;
+        dias = restoA / 86400;
         printf("%d segundos fica %d meses, %d dias", segundos, meses, dias);
     }
     else if (y == 3){
@@ -140,5 +141,55 @@ int main(){
 
     }
    }
+    else if (x ==10){
+    printf("escolha o numero de digitos que voce deseja fazer a media de 2-5\n");
+    scanf("%d", &y);
+        if (y == 2){
+        printf("Digite o valor do primeiro numero:\n");
+        scanf("%d", &nr1);
+        printf("digite o valor do segundo numero:\n");
+        scanf("%d", &nr2);
+        media = (nr1+nr2)/2.0;
+        printf("a media de %d com %d eh %f",nr1, nr2, media);
+        }
+        else if (y == 3){
+        printf("Digite o valor do primeiro numero:\n");
+        scanf("%d", &nr1);
+        printf("digite o valor do segundo numero:\n");
+        scanf("%d", &nr2);
+        printf("Digite o valor do terceiro numero:\n");
+        scanf("%d", &nr3);
+        media = (nr1+nr2+nr3) / 3.0;
+        printf("A media de %d,%d,%d eh %f",nr1, nr2, nr3, media);
+        }
+        else if(y == 4){
+        printf("Digite o valor do primeiro numero:\n");
+        scanf("%d", &nr1);
+        printf("digite o valor do segundo numero:\n");
+        scanf("%d", &nr2);
+        printf("Digite o valor do terceiro numero:\n");
+        scanf("%d", &nr3);
+        printf("Digite o valor do quarto numero:\n");
+        scanf("%d", &nr4);
+        media = (nr1+nr2+nr3+nr4) / 4.0;
+        printf("A media de %d, %d, %d e %d eh %f", nr1, nr2, nr3, nr4, media);
+
+        }
+        else if(y == 5){
+        printf("Digite o valor do primeiro numero:\n");
+        scanf("%d", &nr1);
+        printf("digite o valor do segundo numero:\n");
+        scanf("%d", &nr2);
+        printf("Digite o valor do terceiro numero:\n");
+        scanf("%d", &nr3);
+        printf("Digite o valor do quarto numero:\n");
+        scanf("%d", &nr4);
+        printf("Digite o valor do quinto numero:\n");
+        scanf("%d", &nr5);
+        media = (nr1+ nr2+nr3+nr4+nr5) / 5.0;
+        printf("a media de %d,%d,%d,%d,%d eh %f", nr1, nr2, nr3, nr4, nr5, media);
+
+        }
+    }
     return 0;
 }
