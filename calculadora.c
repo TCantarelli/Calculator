@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 int main(){
-        float a,b,c,x,y, DELTA, X1,X2,XV,YV;
-        int j, l;
+        float a,b,c, DELTA, X1,X2,XV,YV;
+        int segundos, anos, meses, minutos, horas, dias, A , B, x, y;
     printf("escolha qual operação deve ser feita?\n");
     printf("1-soma\n");
     printf("2-subtração\n");
@@ -12,7 +12,8 @@ int main(){
     printf("6-Pitagoras\n");
     printf("7-Raiz Quadrada\n");
     printf("8-Potenciação\n");
-    scanf("%f", &x);
+    printf("9-transformacao de segundos\n");
+    scanf("%d", &x);
     if (x == 1){
         printf("Escolha o primeiro numero a ser somado:");
         scanf("%f", &a);
@@ -72,7 +73,7 @@ int main(){
     else if (x == 6){
         printf("1-Descobrir Hipotenusa\n");
         printf("2-descobrir cateto\n");
-        scanf("%f", &y);
+        scanf("%d", &y);
 
         if (y == 1){
         printf("Digite o valor de um dos catetos:\n");
@@ -94,9 +95,9 @@ int main(){
 
     else if (x == 7){
         printf("digite o valor que quer extrair a raiz quadrada:\n");
-        scanf("%f", &y);
+        scanf("%d", &y);
         b = sqrt(y);
-        printf("A raiz de %f é: %f", y, b);
+        printf("A raiz de %d é: %f", y, b);
     }
 
     else if (x == 8){
@@ -108,5 +109,36 @@ int main(){
     printf("%f elevado a %f, é %f", a, b ,c);
 
     }
+
+    else if (x == 9){
+    printf("Escolha:\n 1-Transformar em Anos\n 2-Transformar em meses\n 3-Transformar em dias\n");
+    scanf("%d", &y);
+    if (y == 1){
+        printf("Digite quantos segundos\n");
+        scanf("%d", &segundos);
+        anos = segundos / 31536000;
+        A = segundos % 31536000;
+        meses = A / 2592000;
+        B = A % 2592000;
+        dias = B / 86400;
+        printf("transormando %d segundos em anos, meses e dias fica %d anos, %d meses, %d dias", segundos, anos, meses, dias);
+    }
+    else if (y == 2){
+        printf("Digite quantos segundos\n");
+        scanf("%d", &segundos);
+        meses = segundos / 2592000;
+        A = segundos % 2592000;
+        dias = A / 86400;
+        printf("%d segundos fica %d meses, %d dias", segundos, meses, dias);
+    }
+    else if (y == 3){
+    printf("Digite quantos segundos\n");
+    scanf("%d", &segundos);
+    dias = segundos / 86400;
+    printf(" %d segundos em dias eh %d", segundos, dias);
+
+
+    }
+   }
     return 0;
 }
